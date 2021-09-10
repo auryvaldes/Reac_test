@@ -37,7 +37,8 @@ router.get('/', async function (req, resp, next) {
           },
           picture: r.thumbnail,
           condition: r.condition,
-          free_shipping: r.shipping.free_shipping
+          free_shipping: r.shipping.free_shipping,
+          state_name: r.address.state_name,
         }
       });
       response.items = items;
