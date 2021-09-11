@@ -13,7 +13,7 @@ const ProductsPage = () => {
   //declaracion de las variables de style
   const { searchBar, WrappContainer, logoMeli, lupaSearch, productsList_ul,
     productsList_li, productsList_img, WrappContainerSeacr, WrappContainer_ul, 
-    img_shipping, productsList_state } = styles;
+    img_shipping, productsList_title, productsList_state } = styles;
 
     // declaracacion de la variable y las fusiones que me permiten obtener la lista de productos
   const [persistFound, setpersistFound] = useState('');
@@ -68,7 +68,7 @@ const ProductsPage = () => {
                   ) : (<span>$USD {prod.price.amount}</span>
                   )}
                 </div>
-                <span>{prod.title}</span>
+                <span style={productsList_title}>{prod.title}</span>
               <span style={productsList_state}>{prod.state_name}</span>
               </li>
             </ul><Divider /></></>
@@ -87,9 +87,9 @@ const styles = {
   WrappContainer_ul: {
     backgroundColor: 'white',
     alignContent: 'center',
-    marginInlineStart: '16rem',
-    marginInlineEnd: '16rem',
-
+    maxWidth: 'max-content',
+    marginLeft: '8rem',
+    alignItems: 'stretch',
   },
   searchBar: {
     width: '80%',
@@ -142,10 +142,16 @@ const styles = {
   img_shipping: {
     marginRight: '0.6rem',
   },
+  productsList_title:{
+    maxWidth: 'fit-content',
+    paddingRight: '4rem',
+    marginRight: '10rem',
+  },
   productsList_state: {
     color: 'gray',
     alignSelf: 'flex-end',
-    marginLeft: '30rem',
+    marginLeft: '40rem',
+    marginRight: '2rem',
   }
 
 };
