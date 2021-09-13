@@ -17,6 +17,7 @@ const ProductsPage = ({ ApiCall }) => {
   const [userData, setUserData] = useState('');
   const foundproducts = ApiCall;
 
+
   const ApiCall2 = (value) => {
     let params = value ? value : ''
     fetch(`/api/items/${params}`)
@@ -59,9 +60,9 @@ const ProductsPage = ({ ApiCall }) => {
                   </li>
                 </ul><Divider />
                 <Switch>
-                  <Route path={`${prod.id}/description`} children={<ProductsDetail ApiCall2={userData} />} />
+                  <Route path={`${prod.id}/description`} children={<ProductsDetail ApiCall2={userData}/>}/>
                 </Switch>
-                
+
               </></>
             ))
             )) : ('')}
@@ -70,8 +71,6 @@ const ProductsPage = ({ ApiCall }) => {
     </Router>
   );
 };
-
-
 
 // //armado de los styles
 const styles = {
@@ -82,7 +81,7 @@ const styles = {
     backgroundColor: 'white',
     alignContent: 'center',
     maxWidth: 'max-content',
-    marginLeft: '13rem',
+    marginLeft: '8rem',
     alignItems: 'stretch',
   },
 
